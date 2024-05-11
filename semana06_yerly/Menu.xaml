@@ -1,0 +1,66 @@
+﻿<Window x:Class="LayersVanneCrud.Menu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LayersVanneCrud"
+        mc:Ignorable="d"
+        Title="Menu" Height="486" Width="800">
+    <Window.Resources>
+        <Style x:Key="MiBotonEstilo" TargetType="Button">
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Background" Value="MediumPurple"/>
+            <Setter Property="BorderBrush" Value="MediumPurple"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="FontWeight" Value="ExtraBold"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="HotPink"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="MiBotonEstiloActions" TargetType="Button">
+            <Setter Property="Background" Value="Black"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="FontWeight" Value="ExtraBold"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style x:Key="MiLabelEstilo" TargetType="Label">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="70*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Margin="5" Background="LightGray">
+            <Button Content="Listar" Style="{StaticResource MiBotonEstilo}" Height="40" Click="ListProducts_Click"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Margin="5">
+            <Label Content="Productos" HorizontalAlignment="Center" FontSize="25" FontWeight="ExtraBold" Margin="5"></Label>
+            <StackPanel Orientation="Horizontal" Margin="20">
+                <TextBox x:Name="txtName" Width="473"></TextBox>
+                <Button Content="Listar por nombre" Click="Button_Click"/>
+            </StackPanel>
+            <DataGrid  x:Name="listproductos" Margin="5" Height="280px"
+                  GridLinesVisibility="Vertical"
+                  HeadersVisibility="All"
+                  Background="LightGray"
+                  RowBackground="LightPink"
+                  AlternatingRowBackground="White"
+                  BorderBrush="Gray"
+                  BorderThickness="5"                  
+                  AutoGenerateColumns="True">
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Window>
