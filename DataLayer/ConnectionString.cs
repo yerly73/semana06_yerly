@@ -8,6 +8,6 @@ namespace DataLayer
 {
     static class ConnectionString
     {
-       public static string connectionString = "Data Source=LAB1504-09\\SQLEXPRESS;Initial Catalog=FacturaDB;User Id=vanne;Password=123456";
+       public static string connectionString = "Data Source=LAB1501-09\\SQLEXPRESS;Initial Catalog=FacturaDB;User Id=aysa;Password=123456";
     }
 }
